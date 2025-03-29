@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import '../css/MovieCard.css'
 
 function MovieCard({movie}){
   const [isFavorite, setIsFavorite] = useState(false);
@@ -8,21 +9,19 @@ function MovieCard({movie}){
   }
 
   return (
-    <div>
-      <div>
+    <div className="movie-card">
+      <div className="movie-image-container">
         <img src={movie.url} alt={movie.title} />
-        <div>
-          <button onClick={onFavoriteClick}>
-            {isFavorite ? '❤️' : '🤍'}
-          </button>
-        </div>
+        <button className="favorite-button" onClick={onFavoriteClick}>
+          {isFavorite ? '❤️' : '🤍'}
+        </button>
       </div>
-      <div>
-        <h3>{movie.title}</h3>
-        <p>{movie.release_date}</p>
-        <div>
+      <div className="movie-info">
+        <h3 className="movie-title">{movie.title}</h3>
+        <p className="movie-year">{movie.release_date}</p>
+        <div className="movie-rating">
           <span>⭐</span>
-          <span>8.5</span>
+          <span className="rating-value">8.5</span>
         </div>
       </div>
     </div>

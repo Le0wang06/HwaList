@@ -8,25 +8,21 @@ function MovieCard({movie}){
   }
 
   return (
-    <div className="movie-card">
-      <div className="movie-poster">
+    <div>
+      <div>
         <img src={movie.url} alt={movie.title} />
-        <div className="movie-overlay">
-          <button 
-            className={`favorite-button ${isFavorite ? 'active' : ''}`} 
-            onClick={onFavoriteClick}
-            aria-label="Add to favorites"
-          >
+        <div>
+          <button onClick={onFavoriteClick}>
             {isFavorite ? '❤️' : '🤍'}
           </button>
         </div>
       </div>
-      <div className="movie-info">
+      <div>
         <h3>{movie.title}</h3>
-        <p className="release-year">{movie.release_date}</p>
-        <div className="movie-rating">
-          <span className="stars">⭐</span>
-          <span className="rating">8.5</span>
+        <p>{movie.release_date}</p>
+        <div>
+          <span>⭐</span>
+          <span>8.5</span>
         </div>
       </div>
     </div>

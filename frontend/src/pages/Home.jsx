@@ -4,38 +4,110 @@ import '../css/Home.css'
 
 function Home(){
   const [searchQuery, setSearchQuery] = useState("");
-  const movies = [
-    {id: 1, title: "Inception", release_date: "2010", url: "https://via.placeholder.com/150"},
-    {id: 2, title: "Interstellar", release_date: "2014", url: "https://via.placeholder.com/150"},
-    {id: 3, title: "The Dark Knight", release_date: "2008", url: "https://via.placeholder.com/150"},
-    {id: 4, title: "The Matrix", release_date: "1999", url: "https://via.placeholder.com/150"},
-    {id: 5, title: "The Dark Knight Rises", release_date: "2012", url: "https://via.placeholder.com/150"}
+  const [activeCategory, setActiveCategory] = useState("All");
+
+  const categories = ["All", "Action", "Romance", "Fantasy", "Comedy", "Drama", "Slice of Life"];
+  
+  const manga = [
+    {
+      id: 1, 
+      title: "Solo Leveling", 
+      status: "Completed",
+      chapters: 179,
+      rating: "9.2",
+      genres: ["Action", "Adventure", "Fantasy"],
+      url: "https://via.placeholder.com/300x400"
+    },
+    {
+      id: 2, 
+      title: "Tower of God", 
+      status: "Ongoing",
+      chapters: 550,
+      rating: "8.9",
+      genres: ["Fantasy", "Adventure", "Mystery"],
+      url: "https://via.placeholder.com/300x400"
+    },
+    {
+      id: 3, 
+      title: "The Beginning After the End", 
+      status: "Ongoing",
+      chapters: 160,
+      rating: "9.0",
+      genres: ["Fantasy", "Action", "Romance"],
+      url: "https://via.placeholder.com/300x400"
+    },
+    {
+      id: 4, 
+      title: "Omniscient Reader's Viewpoint", 
+      status: "Ongoing",
+      chapters: 140,
+      rating: "9.1",
+      genres: ["Action", "Fantasy", "Drama"],
+      url: "https://via.placeholder.com/300x400"
+    },
+    {
+      id: 5, 
+      title: "True Beauty", 
+      status: "Ongoing",
+      chapters: 223,
+      rating: "8.7",
+      genres: ["Romance", "Comedy", "Drama"],
+      url: "https://via.placeholder.com/300x400"
+    }
   ];
 
   const handleSearch = (e) => {
     e.preventDefault();
-    alert(searchQuery);
   }
+
+  const filteredManga = manga.filter(m => {
+    const matchesSearch = 
+      m.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      m.genres.some(genre => genre.toLowerCase().includes(searchQuery.toLowerCase()));
+    
+    const matchesCategory = 
+      activeCategory === "All" || 
+      m.genres.includes(activeCategory);
+
+    return matchesSearch && matchesCategory;
+  });
 
   return (
     <div className="home">
-      <form className="search-form" onSubmit={handleSearch}>
-        <input 
-          className="search-input"
-          type="text" 
-          placeholder="Search for a movie" 
-          value={searchQuery}
-          onChange={(e) => setSearchQuery(e.target.value)}
-        />
-        <button className="search-button" type="submit">Search</button>
-      </form>
-      
-      <div className="movies-grid">
-        {movies.map((movie) => 
-          movie.title.toLowerCase().includes(searchQuery.toLowerCase()) && (
-            <MovieCard movie={movie} key={movie.id} />
-          )
-        )}
+      <div className="content-wrapper">
+        <h1 className="section-title">Discover Amazing Manga</h1>
+        <p className="section-subtitle">Find your next favorite series</p>
+
+        <form className="search-form" onSubmit={handleSearch}>
+          <input 
+            className="search-input"
+            type="text" 
+            placeholder="Search by title or genre..." 
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+          />
+          <button className="search-button" type="submit">
+            Search
+          </button>
+        </form>
+
+        <div className="category-filters">
+          {categories.map(category => (
+            <button
+              key={category}
+              className={`category-filter ${category === activeCategory ? 'active' : ''}`}
+              onClick={() => setActiveCategory(category)}
+            >
+              {category}
+            </button>
+          ))}
+        </div>
+        
+        <div className="movies-grid">
+          {filteredManga.map((manga) => (
+            <MovieCard manga={manga} key={manga.id} />
+          ))}
+        </div>
       </div>
     </div>
   );

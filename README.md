@@ -1,6 +1,7 @@
 ﻿# Manhwa Reader - A Modern Web Application (Not Done Yet LoL)
 
 A sophisticated web application for reading and discovering manhwa, built with React and styled with Apple-inspired design aesthetics.
+Color Pallette from https://developer.apple.com/design/human-interface-guidelines/color LOL!
 
 ## 🌟 Features
 

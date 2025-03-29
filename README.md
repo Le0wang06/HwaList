@@ -1,4 +1,4 @@
-﻿# Manhwa Reader - A Modern Web Application
+﻿# Manhwa Reader - A Modern Web Application (Not Done Yet LoL)
 
 A sophisticated web application for reading and discovering manhwa, built with React and styled with Apple-inspired design aesthetics.
 
@@ -66,6 +66,8 @@ npm install
 3. Start the development server:
 ```bash
 npm start
+or
+npm run dev
 ```
 
 4. Open [http://localhost:3000](http://localhost:3000) in your browser.
@@ -78,9 +80,9 @@ npm start
 - Category filters
 - Manhwa grid display
 
-### Movie Card
+### Manga/Manhwa Card
 - Image display with hover effects
-- Title and description
+- Title and descriptions
 - Genre tags
 - Rating system
 - Status indicators
@@ -136,4 +138,4 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ---
 
-Made with ❤️ by [Your Name]
+Made with ❤️ by Leo Wang

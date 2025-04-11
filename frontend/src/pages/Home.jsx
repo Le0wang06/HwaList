@@ -16,7 +16,8 @@ function Home(){
       chapters: 179,
       rating: "9.2",
       genres: ["Action", "Adventure", "Fantasy"],
-      url: "public/sololeveling.jpg"
+      url: "/sololeveling.jpg",
+      externalLink: "https://www.crunchyroll.com/series/GDKHZEJ0K/solo-leveling?srsltid=AfmBOoqkKjQ37JgjvbqU_hWfHsmyw7fopI76B7Q42sH0TbSb63rH4Og_"
     },
     {
       id: 2, 
@@ -25,7 +26,8 @@ function Home(){
       chapters: 160,
       rating: "9.0",
       genres: ["Fantasy", "Action", "Romance"],
-      url: "public/thebegin.jpg"
+      url: "/thebegin.jpg",
+      externalLink: "https://www.crunchyroll.com/series/G24H1NWKE/the-beginning-after-the-end?srsltid=AfmBOoqIE3JqnQRyIxo6c4hlyWco8mYAbEuvpqyWHxXEk-QV2r704xm_"
     },
     {
       id: 3, 
@@ -34,7 +36,8 @@ function Home(){
       chapters: 140,
       rating: "9.1",
       genres: ["Action", "Fantasy", "Drama"],
-      url: "public/omniscient.jpg"
+      url: "/omniscient.jpg",
+      externalLink: "https://www.webtoons.com/en/action/omniscient-reader/list?title_no=2154&page=1https://webtoons.com/en/action/omniscient-reader/list?title_no=2154"
     },
     {
       id: 4, 
@@ -43,7 +46,8 @@ function Home(){
       chapters: 550,
       rating: "8.9",
       genres: ["Fantasy", "Adventure", "Mystery"],
-      url: "public/towerofgod.jpg"
+      url: "/towerofgod.jpg",
+      externalLink: "https://www.webtoons.com/en/fantasy/tower-of-god/list?title_no=95"
     }
     ,
     {
@@ -53,7 +57,8 @@ function Home(){
       chapters: 223,
       rating: "8.7",
       genres: ["Romance", "Comedy", "Drama"],
-      url: "public/truebeauty.jpg"
+      url: "",
+      externalLink: "https://www.webtoons.com/en/romance/truebeauty/list?title_no=1436"
     }
   ];
 

@@ -1,43 +1,68 @@
 import MovieCard from "../components/MovieCard";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import '../css/Home.css';
-import { fetchAllManga, fetchCategories } from "../services/api";
 
 function Home(){
   const [searchQuery, setSearchQuery] = useState("");
   const [activeCategory, setActiveCategory] = useState("All");
-  const [manga, setManga] = useState([]);
-  const [categories, setCategories] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
 
-  useEffect(() => {
-    const loadData = async () => {
-      try {
-        setLoading(true);
-        
-        // Fetch manga data
-        const mangaData = await fetchAllManga();
-        setManga(mangaData);
-        
-        // Fetch categories
-        const categoriesData = await fetchCategories();
-        setCategories(categoriesData);
-        
-        setLoading(false);
-      } catch (err) {
-        console.error("Error loading data:", err);
-        setError("Failed to load data. Please try again later.");
-        setLoading(false);
-      }
-    };
-    
-    loadData();
-  }, []);
+  const categories = ["All", "Action", "Romance", "Fantasy", "Comedy", "Drama", "Slice of Life"];
+  
+  const manga = [
+    {
+      id: 1, 
+      title: "Solo Leveling", 
+      status: "Completed",
+      chapters: 179,
+      rating: "9.2",
+      genres: ["Action", "Adventure", "Fantasy"],
+      url: "/sololeveling.jpg",
+      externalLink: "https://www.crunchyroll.com/series/GDKHZEJ0K/solo-leveling"
+    },
+    {
+      id: 2, 
+      title: "Tower of God", 
+      status: "Ongoing",
+      chapters: 550,
+      rating: "8.9",
+      genres: ["Fantasy", "Adventure", "Mystery"],
+      url: "/towerofgod.jpg",
+      externalLink: "https://www.webtoons.com/en/fantasy/tower-of-god/list?title_no=95"
+    },
+    {
+      id: 3, 
+      title: "The Beginning After the End", 
+      status: "Ongoing",
+      chapters: 160,
+      rating: "9.0",
+      genres: ["Fantasy", "Action", "Romance"],
+      url: "/thebegin.jpg",
+      externalLink: "https://tapas.io/series/TBATE"
+    },
+    {
+      id: 4, 
+      title: "Omniscient Reader's Viewpoint", 
+      status: "Ongoing",
+      chapters: 140,
+      rating: "9.1",
+      genres: ["Action", "Fantasy", "Drama"],
+      url: "/omniscient.jpg",
+      externalLink: "https://www.webtoons.com/en/action/omniscient-reader/list?title_no=2154"
+    },
+    {
+      id: 5, 
+      title: "True Beauty", 
+      status: "Ongoing",
+      chapters: 223,
+      rating: "8.7",
+      genres: ["Romance", "Comedy", "Drama"],
+      url: "/truebeauty.jpg",
+      externalLink: "https://www.webtoons.com/en/romance/truebeauty/list?title_no=1436"
+    }
+  ];
 
   const handleSearch = (e) => {
     e.preventDefault();
-    // You could implement additional search functionality here
   }
 
   const filteredManga = manga.filter(m => {
@@ -51,27 +76,6 @@ function Home(){
 
     return matchesSearch && matchesCategory;
   });
-
-  if (loading) {
-    return (
-      <div className="loading-container">
-        <div className="loading-spinner"></div>
-        <p>Loading amazing manga...</p>
-      </div>
-    );
-  }
-
-  if (error) {
-    return (
-      <div className="error-container">
-        <h2>Oops! Something went wrong</h2>
-        <p>{error}</p>
-        <button onClick={() => window.location.reload()}>
-          Try Again
-        </button>
-      </div>
-    );
-  }
 
   return (
     <div className="home">
@@ -95,26 +99,19 @@ function Home(){
         <div className="category-filters">
           {categories.map(category => (
             <button
-              key={category.id}
-              className={`category-filter ${category.name === activeCategory ? 'active' : ''}`}
-              onClick={() => setActiveCategory(category.name)}
+              key={category}
+              className={`category-filter ${category === activeCategory ? 'active' : ''}`}
+              onClick={() => setActiveCategory(category)}
             >
-              {category.name}
+              {category}
             </button>
           ))}
         </div>
         
         <div className="movies-grid">
-          {filteredManga.length > 0 ? (
-            filteredManga.map((manga) => (
-              <MovieCard manga={manga} key={manga.id} />
-            ))
-          ) : (
-            <div className="no-results">
-              <h3>No manga found</h3>
-              <p>Try changing your search or filter criteria</p>
-            </div>
-          )}
+          {filteredManga.map((manga) => (
+            <MovieCard manga={manga} key={manga.id} />
+          ))}
         </div>
       </div>
     </div>

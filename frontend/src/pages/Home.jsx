@@ -16,7 +16,7 @@ function Home(){
       chapters: 179,
       rating: "9.2",
       genres: ["Action", "Adventure", "Fantasy"],
-      url: "https://via.placeholder.com/300x400"
+      url: "public/sololeveling.jpg"
     },
     {
       id: 2, 
@@ -25,7 +25,7 @@ function Home(){
       chapters: 550,
       rating: "8.9",
       genres: ["Fantasy", "Adventure", "Mystery"],
-      url: "https://via.placeholder.com/300x400"
+      url: ""
     },
     {
       id: 3, 
@@ -34,7 +34,7 @@ function Home(){
       chapters: 160,
       rating: "9.0",
       genres: ["Fantasy", "Action", "Romance"],
-      url: "https://via.placeholder.com/300x400"
+      url: ""
     },
     {
       id: 4, 
@@ -43,7 +43,7 @@ function Home(){
       chapters: 140,
       rating: "9.1",
       genres: ["Action", "Fantasy", "Drama"],
-      url: "https://via.placeholder.com/300x400"
+      url: ""
     },
     {
       id: 5, 
@@ -52,7 +52,7 @@ function Home(){
       chapters: 223,
       rating: "8.7",
       genres: ["Romance", "Comedy", "Drama"],
-      url: "https://via.placeholder.com/300x400"
+      url: ""
     }
   ];
 

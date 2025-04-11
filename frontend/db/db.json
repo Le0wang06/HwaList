@@ -1,0 +1,65 @@
+{
+  "manga": [
+    {
+      "id": 1, 
+      "title": "Solo Leveling", 
+      "status": "Completed",
+      "chapters": 179,
+      "rating": "9.2",
+      "genres": ["Action", "Adventure", "Fantasy"],
+      "url": "/sololeveling.jpg",
+      "externalLink": "https://www.crunchyroll.com/series/GDKHZEJ0K/solo-leveling"
+    },
+    {
+      "id": 2, 
+      "title": "The Beginning After the End", 
+      "status": "Ongoing",
+      "chapters": 160,
+      "rating": "9.0",
+      "genres": ["Fantasy", "Action", "Romance"],
+      "url": "/thebegin.jpg",
+      "externalLink": "https://tapas.io/series/TBATE"
+    },
+    {
+      "id": 3, 
+      "title": "Omniscient Reader's Viewpoint", 
+      "status": "Ongoing",
+      "chapters": 140,
+      "rating": "9.1",
+      "genres": ["Action", "Fantasy", "Drama"],
+      "url": "/omniscient.jpg",
+      "externalLink": "https://www.webtoons.com/en/action/omniscient-reader/list?title_no=2154"
+    },
+    {
+      "id": 4, 
+      "title": "Tower of God", 
+      "status": "Ongoing",
+      "chapters": 550,
+      "rating": "8.9",
+      "genres": ["Fantasy", "Adventure", "Mystery"],
+      "url": "/towerofgod.jpg",
+      "externalLink": "https://www.webtoons.com/en/fantasy/tower-of-god/list?title_no=95"
+    },
+    {
+      "id": 5, 
+      "title": "True Beauty", 
+      "status": "Ongoing",
+      "chapters": 223,
+      "rating": "8.7",
+      "genres": ["Romance", "Comedy", "Drama"],
+      "url": "/truebeauty.jpg",
+      "externalLink": "https://www.webtoons.com/en/romance/truebeauty/list?title_no=1436"
+    }
+  ],
+  "categories": [
+    "All",
+    "Action",
+    "Romance",
+    "Fantasy",
+    "Comedy",
+    "Drama",
+    "Adventure",
+    "Mystery",
+    "Slice of Life"
+  ]
+} 

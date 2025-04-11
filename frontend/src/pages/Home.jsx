@@ -95,11 +95,11 @@ function Home(){
         <div className="category-filters">
           {categories.map(category => (
             <button
-              key={category}
-              className={`category-filter ${category === activeCategory ? 'active' : ''}`}
-              onClick={() => setActiveCategory(category)}
+              key={category.id}
+              className={`category-filter ${category.name === activeCategory ? 'active' : ''}`}
+              onClick={() => setActiveCategory(category.name)}
             >
-              {category}
+              {category.name}
             </button>
           ))}
         </div>

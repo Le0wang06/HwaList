@@ -52,14 +52,14 @@
     }
   ],
   "categories": [
-    "All",
-    "Action",
-    "Romance",
-    "Fantasy",
-    "Comedy",
-    "Drama",
-    "Adventure",
-    "Mystery",
-    "Slice of Life"
+    { "id": 1, "name": "All" },
+    { "id": 2, "name": "Action" },
+    { "id": 3, "name": "Romance" },
+    { "id": 4, "name": "Fantasy" },
+    { "id": 5, "name": "Comedy" },
+    { "id": 6, "name": "Drama" },
+    { "id": 7, "name": "Adventure" },
+    { "id": 8, "name": "Mystery" },
+    { "id": 9, "name": "Slice of Life" }
   ]
 } 

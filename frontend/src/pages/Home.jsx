@@ -20,31 +20,32 @@ function Home(){
     },
     {
       id: 2, 
-      title: "Tower of God", 
-      status: "Ongoing",
-      chapters: 550,
-      rating: "8.9",
-      genres: ["Fantasy", "Adventure", "Mystery"],
-      url: ""
-    },
-    {
-      id: 3, 
       title: "The Beginning After the End", 
       status: "Ongoing",
       chapters: 160,
       rating: "9.0",
       genres: ["Fantasy", "Action", "Romance"],
-      url: ""
+      url: "public/thebegin.jpg"
     },
     {
-      id: 4, 
+      id: 3, 
       title: "Omniscient Reader's Viewpoint", 
       status: "Ongoing",
       chapters: 140,
       rating: "9.1",
       genres: ["Action", "Fantasy", "Drama"],
-      url: ""
+      url: "public/omniscient.jpg"
     },
+    {
+      id: 4, 
+      title: "Tower of God", 
+      status: "Ongoing",
+      chapters: 550,
+      rating: "8.9",
+      genres: ["Fantasy", "Adventure", "Mystery"],
+      url: "public/towerofgod.jpg"
+    }
+    ,
     {
       id: 5, 
       title: "True Beauty", 

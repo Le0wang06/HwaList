@@ -9,8 +9,25 @@ function MovieCard({manga}){
     setIsFavorite(!isFavorite);
   }
 
+  // Determine the link target - use external link if provided, otherwise use internal route
+  const getCardLink = () => {
+    // Check if manga has externalLink property
+    if (manga.externalLink) {
+      return manga.externalLink;
+    }
+    // Otherwise use default internal link
+    return `/manga/${manga.id}`;
+  }
+
+  const isExternalLink = manga.externalLink ? true : false;
+
   return (
-    <a href={`/manga/${manga.id}`} className="movie-card">
+    <a 
+      href={getCardLink()} 
+      className="movie-card"
+      target={isExternalLink ? "_blank" : "_self"}
+      rel={isExternalLink ? "noopener noreferrer" : ""}
+    >
       <div className="movie-image-container">
         {manga.url ? (
           <img src={manga.url} alt={manga.title} />

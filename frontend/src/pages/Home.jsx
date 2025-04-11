@@ -53,7 +53,7 @@ function Home(){
       chapters: 223,
       rating: "8.7",
       genres: ["Romance", "Comedy", "Drama"],
-      url: ""
+      url: "public/truebeauty.jpg"
     }
   ];
 
